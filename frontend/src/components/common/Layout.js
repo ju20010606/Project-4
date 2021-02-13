@@ -1,13 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getCurrentUser, logout } from "../../services/auth.service";
-import {Box,Menu,MenuItem,IconButton, Slide} from '@chakra-ui/react'
+import {
+       IconButton, 
+       useDisclosure,
+       Drawer,
+       DrawerBody,
+       DrawerFooter,
+       DrawerHeader,
+       DrawerOverlay,
+       DrawerContent,
+       DrawerCloseButton,
+       Button,
+       Text
+      } from '@chakra-ui/react'
 import {HamburgerIcon} from '@chakra-ui/icons'
-import { slideInLeft } from 'react-animations'
+
+//css
+
+
+
+
+
+
 const Layout = (props) => {
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const btnRef = React.useRef()
   useEffect(() => {
     // grab getCurrentuser from the auth service
     const user = getCurrentUser();
@@ -28,20 +48,45 @@ const Layout = (props) => {
 
   return (
     <>
-     {/* <IconButton></IconButton> */}
-    <Box className="menu" bg="#2D3748" h="800px" w="200px">  
-    <IconButton ml="160px" bg="#2D3748" icon={<HamburgerIcon color="white"/>}></IconButton>
-      <Menu>
-          <MenuItem  color="white">
-          <Link to={"/home"}>
-            Home
-          </Link>
-          </MenuItem> 
-      </Menu>
-    </Box>
+    <IconButton ref={btnRef} onClick={onOpen} rounded="full" mb="750px" ml="10px" bg="#2D3748" icon={<HamburgerIcon color="white"/>}></IconButton>
+    <Drawer 
+      bg="#2D3748" 
+      h="800px" 
+      w="200px"  
+      isOpen={isOpen}
+      placement="left"
+      onClose={onClose}
+      finalFocusRef={btnRef}> 
+      <DrawerOverlay>
+          <DrawerContent>
+            <DrawerCloseButton color="white"/>
+            <DrawerHeader bg="#2D3748" color="white">Menu</DrawerHeader>
+
+            <DrawerBody  bg="#2D3748" >
+              <Link className="Link" to={"/home"}>
+                Home
+              </Link>
+              <br/>
+              <Link className="Link" to={"/tests"}>
+                Tests
+              </Link>
+              <br/>
+              <Link className="Link" to={"/projects"}>
+                Projects
+              </Link>
+              <br/>
+              <Link className="Link" to={"/homeworks"}>
+                Homeworks
+              </Link>
+              <br/>
+            </DrawerBody>
+          </DrawerContent>
+        </DrawerOverlay>
+    </Drawer>
+       
     </>
-  );
-};
+  )
+}
 
 export default Layout;
 

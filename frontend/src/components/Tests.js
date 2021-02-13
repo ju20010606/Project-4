@@ -2,14 +2,16 @@ import React from 'react'
 import Layout from './common/Layout'
 
 //css
-import {HStack, Text} from '@chakra-ui/react'
+import {HStack, Text, Spacer, Box} from '@chakra-ui/react'
 
 const Tests = () =>{
     return(
         <>
         <HStack>
          <Layout></Layout>
-         <Text>Test page </Text>  
+         <Text>Tests Page</Text>
+         <Spacer/>
+         <Box bg="#2D3748" h="800px" w="200px" ml="500px"></Box>
         </HStack>
         
         </>
