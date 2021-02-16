@@ -42,6 +42,8 @@ const Layout = (props) => {
 
   const logOut = () => {
     logout()
+
+    window.location.replace("http://localhost:3000/login");
   }
 
      
@@ -80,6 +82,13 @@ const Layout = (props) => {
               </Link>
               <br/>
             </DrawerBody>
+            <DrawerFooter bg="#2D3748" >
+            <li className="nav-item">
+            <a href="/login" className="nav-link" onClick={logOut}>
+              Logout
+            </a>
+          </li>
+            </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>
     </Drawer>

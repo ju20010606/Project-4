@@ -12,10 +12,9 @@ const Home = () =>{
         
                 <Layout/>
             <Center>
-             <Box  borderTopLeftRadius="3xl" borderBottomLeftRadius="3xl" className="todolist" w="400px" h="600px" bg="#2D3748" ml="100px"> 
-                <Box  className="calendar"  borderTopRightRadius="3xl" borderBottomRightRadius="3xl"  w="800px" h="600px"   ml="400px">
-                    <Box  borderTopRightRadius="3xl" borderBottomRightRadius="3xl" w="100%" h="80px" >
-
+             <Box boxShadow="2xl" borderTopLeftRadius="3xl" borderBottomLeftRadius="3xl" className="todolist" w="300px" h="600px" bg="#2D3748" ml="200px" ></Box>
+                <Box boxShadow="2xl" className="calendar"  borderTopRightRadius="3xl" borderBottomRightRadius="3xl"  w="700px" h="600px" >
+                    <Box   borderTopRightRadius="3xl" borderBottomRightRadius="3xl" w="100%" h="80px" >
                     <Center><Text fontFamily="helvetica" fontSize="20px" mt="20px" color="gray">Mon</Text></Center>
                     </Box>
                     <Divider orientation="horizontal" />
@@ -61,7 +60,6 @@ const Home = () =>{
                             <Box borderRadius="3lg" className="calendarDayWeekend" w="80px" h="80px"><Center><Text mt="25px" fontFamily="helvetica">1</Text></Center></Box>  
                         </Grid> 
                     </Box>
-                </Box>
               </Center>
             
             </HStack>
