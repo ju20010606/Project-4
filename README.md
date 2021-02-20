@@ -1,6 +1,10 @@
 # Project-4
 ### Screenshots
-An embedded screenshot of the app
+<img src="https://i.imgur.com/XwQlnTQ.png" width="240" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/JtiqCeN.png" width="240" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/ubA86Gt.png" width="240" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/oYgWbDz.png" width="240" height="150" style="border: 1px solid black">
+
 ### Technologies used
 A couple paragraphs about the general approach you took
 ### Dependencies
@@ -49,5 +53,6 @@ Link to your user stories – who are your users, what do they want, and why?
 
 ### Pitch Deck
 Link to your pitch deck – documentation of your wireframes, user stories, and proposed architecture
+
 ### Problems Descriptions
-Descriptions of any unsolved problems or major hurdles you had to overcome
+The calendar in the home page had to be made from scratch, so making it function was a difficulty.
