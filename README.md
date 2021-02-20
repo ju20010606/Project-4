@@ -4,7 +4,42 @@ An embedded screenshot of the app
 ### Technologies used
 A couple paragraphs about the general approach you took
 ### Dependencies
-Installation instructions for any dependencies
+
+```make sure to npm i (all dependencies should be installed, if they are not installed, install manually:```
+
+* chakra-ui
+```
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+````
+* axios
+```
+npm i axios
+```
+* bootstrap
+```
+npm i bootstrap
+```
+* cors
+```
+npm i cors
+```
+* dotenv
+```
+npm i dotenv
+```
+
+* react
+```
+npm i react-router-dom react-validation
+```
+* validator
+
+```
+npm i validator
+```
+
+
+
 ### User Stories
 Link to your user stories – who are your users, what do they want, and why?
 ### Wireframes
