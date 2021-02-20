@@ -119,7 +119,16 @@ const Homeworks = () =>{
       })
      }}><Center><VStack><Text color="white" mt="10px">{homework.title}</Text><Text visibility="hidden" size="xs" className="homeworkid">{homework._id}</Text></VStack></Center></Box>
      <IconButton mt="50px" id={homework._id} icon={<SmallCloseIcon/>}rounded="full" size="xs" onClick={(e)=>{
-        console.dir(e.target.parentNode.children[1].attributes.id.value)
+        let id = e.target.parentNode.children[1].attributes.id.value
+        axios.delete("http://localhost:8000/api/onehomework/"+ id)
+        .then((res)=>{
+          console.log("deleted",res.data)
+          getData()
+          
+        })
+        .catch((error)=>{
+          console.log(error)
+        })
      }}></IconButton></HStack>
       </>
     )  

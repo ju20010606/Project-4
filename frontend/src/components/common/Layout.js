@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { getCurrentUser, logout } from "../../services/auth.service";
 import {
        IconButton, 
@@ -25,6 +25,7 @@ import {HamburgerIcon, SettingsIcon} from '@chakra-ui/icons'
 
 
 const Layout = (props) => {
+  let history = useHistory()
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -44,7 +45,7 @@ const Layout = (props) => {
   const logOut = () => {
     logout()
 
-    window.location.replace("http://localhost:3000/login");
+    history.push("/login")
   }
 
  

@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
-import {Box,Center,Progress,Grid,IconButton,Text,Circle,Divider,HStack,MenuItem,Menu, UnorderedList,ListItem,List, Checkbox, ListIcon, Spacer} from "@chakra-ui/react"
+import {Box,Center,Progress,Grid,IconButton,Text,Circle,Divider,HStack,MenuItem,Menu, UnorderedList,ListItem,List, Checkbox, ListIcon, Spacer, Devider} from "@chakra-ui/react"
 import { CalendarIcon, ChevronLeftIcon,ChevronRightIcon } from '@chakra-ui/icons'
+import CalendarOne from './Calendar29Days'
+import CalendarThree from './Calendar30Days'
 import axios from "axios"
 //css
 
 const CalendarTwo = (props) =>{
     const [todos, setTodos] = useState([])
+    const [i, setI] = useState(0)
+    const [day, setDay] = useState()
     const months = [
         {name:"January", number:"01"},
         {name:"February", number:"02"},
@@ -24,9 +28,14 @@ const CalendarTwo = (props) =>{
 
 
 const getData = (e) =>{
-    let day = e.target.innerText
-    
-    let month = months[0].number
+    if(e.target.innerText === "1"||e.target.innerText === "2"|| e.target.innerText === "3"||e.target.innerText === "4"||e.target.innerText === "5"||e.target.innerText === "6"||e.target.innerText === "7"||e.target.innerText === "8"||e.target.innerText === "9"){
+        setDay( "0" + e.target.innerText)
+        console.log("1:",day)
+   }else{
+      setDay(e.target.innerText)
+      console.log("2", day)
+   }
+    let month = months[i].number
     let year = "2021"
     let date = year +"-"+month+"-"+day
         
@@ -48,42 +57,28 @@ const getData = (e) =>{
  
 
  
+const changeIndexOfCalendar = () =>{ 
+
+    setI(i+1)
+    console.log(i)
+}
 
 
+const changeIndexOfCalendarMinus = () =>{ 
+  setI(i-1)
+  console.log(i)
+}
 
 
-
-
-
-
-
-
-    return (
-        <>
-        <Center>
-             <Box boxShadow="2xl" borderTopLeftRadius="3xl" borderBottomLeftRadius="3xl" className="todolist" w="300px" h="600px" bg="#2D3748" ml="200px"> 
-             <Text color="white" ml="100px">Today's To Do</Text>
-             
-             <List className='list'>
-              {todos.map((todo)=>{
-                 return  <ListItem color="white" margin={2}><Checkbox colorScheme="black">{todo.title}</Checkbox><Progress></Progress></ListItem>
-               })}
-               
-             </List>
-             </Box>
-                <Box boxShadow="2xl" className="calendar"  bdorderTopRightRadius="3xl" borderBottomRightRadius="3xl"  w="700px" h="600px" >
-                    <Box   borderTopRightRadius="3xl" borderBottomRightRadius="3xl" w="100%" h="80px" >
-                    <Center>
-                    <HStack mt="20px">
-                    <ChevronLeftIcon size="md" color="gray"></ChevronLeftIcon>
-      
-                   <Text fontFamily="helvetica" fontSize="20px" mt="20px" color="gray">{months[0].name}</Text>
-                    <ChevronRightIcon color="gray" ></ChevronRightIcon>
-                    </HStack>
-                    </Center>
-                    </Box>
-                    <Divider orientation="horizontal" />
-                       <Grid templateColumns="repeat(7, 1fr)" gap={4}>
+const displayCalendar = () =>{
+    if(months[i].name === "February") {
+        return <CalendarOne setTodos={setTodos} i={i}/>
+    }else if (months[i].name === "April" ||months[i].name === "June"||months[i].name === "September"||months[i].name === "November" ){
+        return <CalendarThree setTodos={setTodos} i={i} />
+    }else{
+        return(
+          <>
+            <Grid templateColumns="repeat(7, 1fr)" gap={4}>
                             <Box  className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>1</Text></Center></Box>
                             <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>2</Text></Center></Box>
                             <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>3</Text></Center></Box>
@@ -124,6 +119,42 @@ const getData = (e) =>{
                             <Box className="calendarDay" w="60px" h="60px"  ml="10px"><Center><Text mt="25px" fontFamily="helvetica">1</Text></Center></Box>
                             <Box borderRadius="3lg" className="calendarDayWeekend" w="60px" h="60px"><Center><Text mt="25px" fontFamily="helvetica">1</Text></Center></Box>   */}
                         </Grid> 
+          </>
+        )
+    }
+}
+
+
+
+
+
+
+    return (
+        <>
+        <Center>
+             <Box boxShadow="2xl" borderTopLeftRadius="3xl" borderBottomLeftRadius="3xl" className="todolist" w="300px" h="600px" bg="#2D3748" ml="200px"> 
+             <Text color="white" ml="100px">Today's To Do</Text>
+             
+             <List className='list'>
+              {todos.map((todo)=>{
+                 return  <ListItem color="white" margin={2}><Checkbox colorScheme="black">{todo.title}</Checkbox></ListItem>
+               })}
+               
+             </List>
+             </Box>
+                <Box boxShadow="2xl" className="calendar"  bdorderTopRightRadius="3xl" borderBottomRightRadius="3xl"  w="700px" h="600px" >
+                    <Box   borderTopRightRadius="3xl" borderBottomRightRadius="3xl" w="100%" h="80px" >
+                    <Center>
+                    <HStack mt="20px">
+                    <IconButton icon={<ChevronLeftIcon color="gray" />} onClick={changeIndexOfCalendarMinus}></IconButton>
+                    <Text fontFamily="helvetica" fontSize="20px" mt="20px" color="gray">{months[i].name}</Text>
+                    <IconButton icon={<ChevronRightIcon color="gray" />} onClick={changeIndexOfCalendar}></IconButton>
+                    </HStack>
+                    </Center>
+                    </Box>
+                    <Divider orientation="horizontal" />
+    
+                     {displayCalendar()}
                     </Box>
               </Center>
             
