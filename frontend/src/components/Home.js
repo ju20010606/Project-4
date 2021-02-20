@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import {Redirect} from "react-router-dom"
+import {useHistory} from 'react-router-dom'
 import CalendarTwo from './common/Calendar31Days'
 // import CalendarThree from '../components/common/Calendar30Days'
 // import CalendarOne from '../components/common/Calendar29Days'
@@ -16,8 +16,12 @@ import { CalendarIcon } from '@chakra-ui/icons'
 import "../css/Home.css"
 import { checkIfLoggedIn } from '../utilites/functions.utilities'
 const Home = () =>{
+    let loggedIn = checkIfLoggedIn()
+    let history = useHistory()
     useEffect(()=>{
-        checkIfLoggedIn()
+        if(!loggedIn){
+            history.push("/login")
+          }
     },[])
 
     

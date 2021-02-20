@@ -1,12 +1,17 @@
 import React, {useEffect} from 'react'
 import Layout from './common/Layout'
+import {useHistory} from 'react-router-dom'
 import {getCurrentUser} from '../services/auth.service'
 import {HStack, Spacer, Text, Center, Box
 ,Flex,Avatar} from '@chakra-ui/react'
 import { checkIfLoggedIn } from '../utilites/functions.utilities'
 const Profile = () =>{
+    let loggedIn = checkIfLoggedIn()
+    let history = useHistory()
     useEffect(()=>{
-        checkIfLoggedIn()
+        if(!loggedIn){
+            history.push("/login")
+          }
     },[])
     const currentUser = getCurrentUser()
     console.log(currentUser)

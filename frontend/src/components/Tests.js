@@ -3,11 +3,15 @@ import Layout from './common/Layout'
 import Card from './common/Card'
 //css
 import {HStack, Text, Spacer, Box} from '@chakra-ui/react'
+import {useHistory} from 'react-router-dom'
 import { checkIfLoggedIn } from '../utilites/functions.utilities'
 const Tests = () =>{
-     
+    let loggedIn = checkIfLoggedIn()
+    let history = useHistory()
     useEffect(()=>{
-        checkIfLoggedIn()
+        if(!loggedIn){
+            history.push("/login")
+          }
     },[])
 
 
