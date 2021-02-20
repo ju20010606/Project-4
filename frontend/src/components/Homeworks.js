@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 import Layout from './common/Layout'
 import axios from 'axios'
 //css
@@ -28,8 +29,9 @@ import {
     Skeleton,
     propNames
 } from '@chakra-ui/react'
-import{SmallAddIcon} from '@chakra-ui/icons'
+import{SmallAddIcon, SmallCloseIcon} from '@chakra-ui/icons'
 import { getCurrentUser } from "../services/auth.service"
+import { checkIfLoggedIn } from '../utilites/functions.utilities'
 
 const currentUser = getCurrentUser()
 
@@ -40,6 +42,8 @@ const Homeworks = () =>{
     const finalRef = React.useRef()
     const [homeworks, setHomeworks] = useState([])
     const [one, setOne] = useState("")
+    let loggedIn = checkIfLoggedIn()
+    let history = useHistory()
 
    const newHomework = () =>{
      const title = document.querySelector(".title").value
@@ -51,7 +55,7 @@ const Homeworks = () =>{
         dueDate: dueDate,
         userId: currentUser.id,
         category: "homework",
-        toDoList:["task1","task2"]
+        toDoList:[]
       }
       axios.post('http://localhost:8000/api/newhomework', homework)
       .then((res) => {
@@ -67,7 +71,7 @@ const Homeworks = () =>{
 
   const getData = () =>{
 
-    
+    console.log("in getData")
     axios.get("http://localhost:8000/api/homeworks/" + currentUser.id)
     .then((res)=>{
       console.log(currentUser.id)
@@ -82,30 +86,44 @@ const Homeworks = () =>{
     })
   }
 
+ 
   
  
 
   useEffect(()=>{
-    getData()
+    if(!loggedIn){
+      history.push("/login")
+    }
+    if(currentUser){
+      getData()
+    }
+    
   },[])
 
 
  const display = () =>{
    return homeworks.map((homework)=>{
-     return <Box w="150px" h="50px" bg="#2D3748" mt="30px" borderRadius="3xl" boxShadow="dark-lg" onClick={()=>{
+     return(
+       <>
+       <HStack>
+     <Box w="150px" h="50px" bg="#2D3748" mt="30px" borderRadius="3xl" boxShadow="dark-lg" onClick={()=>{
       let id = homework._id
       
       axios.get("http://localhost:8000/api/onehomework/"+ id)
       .then((res)=>{
         setOne(res.data)
-        console.log('one', res.data.toDoList)
+        
       })
       .catch((error)=>{
         console.log(error)
       })
-     }}><Center><Text color="white" mt="10px">{homework.title}</Text></Center></Box>
-   })
-   
+     }}><Center><VStack><Text color="white" mt="10px">{homework.title}</Text><Text visibility="hidden" size="xs" className="homeworkid">{homework._id}</Text></VStack></Center></Box>
+     <IconButton mt="50px" id={homework._id} icon={<SmallCloseIcon/>}rounded="full" size="xs" onClick={(e)=>{
+        console.dir(e.target.parentNode.children[1].attributes.id.value)
+     }}></IconButton></HStack>
+      </>
+    )  
+   }) 
  }
 
 
@@ -160,11 +178,11 @@ const Homeworks = () =>{
         </ModalContent>
       </Modal>
           <Center>
-            <Card title={one.title} description={one.description} tasks={one.toDoList}/>
+            <Card title={one.title} description={one.description} tasks={one.toDoList} getData={getData} setOne={setOne} date={one.dueDate} id={one._id} />
           </Center>
           <Spacer/>
-          <Box  bg="#2D3748" h="800px" w="200px" ml="500px">
-              <IconButton onClick={onOpen} rounded="full" ml="150px" mt="10px" icon={<SmallAddIcon/>}></IconButton>
+          <Box  bg="#2D3748" h="800px" w="240px" ml="500px">
+              <IconButton onClick={onOpen} rounded="full" ml="200px" mt="10px" icon={<SmallAddIcon/>}></IconButton>
               <VStack className="sideBar">
                {display()}
               </VStack>

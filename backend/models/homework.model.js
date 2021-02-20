@@ -8,9 +8,10 @@ const Homework = mongoose.model(
             ref: "User"
         },
         title:String,
-        dueDate:Date,
+        dueDate:String,
         description:String,
-        toDoList:[]
+        category:String,
+        toDoList:[String]
         })
 )
 

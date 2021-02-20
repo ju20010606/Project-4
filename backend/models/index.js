@@ -6,6 +6,7 @@ db.mongoose = mongoose
 db.user = require('./user.model')
 db.role = require('./role.model')
 db.homework = require('./homework.model')
+db.project = require('./project.model')
 
 db.Roles = ['users','admin']
 

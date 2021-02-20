@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Layout from './common/Layout'
 import Card from './common/Card'
 //css
 import {HStack, Text, Spacer, Box} from '@chakra-ui/react'
-
+import { checkIfLoggedIn } from '../utilites/functions.utilities'
 const Tests = () =>{
+     
+    useEffect(()=>{
+        checkIfLoggedIn()
+    },[])
+
+
     return(
         <>
         <HStack>

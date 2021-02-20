@@ -12,9 +12,10 @@ import {
        DrawerContent,
        DrawerCloseButton,
        Button,
-       Text
+       Text,
+       Icon
       } from '@chakra-ui/react'
-import {HamburgerIcon} from '@chakra-ui/icons'
+import {HamburgerIcon, SettingsIcon} from '@chakra-ui/icons'
 
 //css
 
@@ -46,7 +47,7 @@ const Layout = (props) => {
     window.location.replace("http://localhost:3000/login");
   }
 
-     
+ 
 
   return (
     <>
@@ -65,29 +66,28 @@ const Layout = (props) => {
             <DrawerHeader bg="#2D3748" color="white">Menu</DrawerHeader>
 
             <DrawerBody  bg="#2D3748" >
-              <Link className="Link" to={"/home"}>
+              <Link style={{color:"white"}} to={"/home"}>
                 Home
               </Link>
               <br/>
-              <Link className="Link" to={"/tests"}>
+              <Link style={{color:"white"}} to={"/tests"}>
                 Tests
               </Link>
               <br/>
-              <Link className="Link" to={"/projects"}>
+              <Link style={{color:"white"}} to={"/projects"}>
                 Projects
               </Link>
               <br/>
-              <Link className="Link" to={"/homeworks"}>
+              <Link style={{color:"white"}} to={"/homeworks"}>
                 Homeworks
               </Link>
               <br/>
             </DrawerBody>
             <DrawerFooter bg="#2D3748" >
-            <li className="nav-item">
-            <a href="/login" className="nav-link" onClick={logOut}>
+            <SettingsIcon color="white"/>
+            <a href="/login" style={{color:"white"}} onClick={logOut}>
               Logout
             </a>
-          </li>
             </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>

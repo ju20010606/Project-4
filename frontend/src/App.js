@@ -12,6 +12,7 @@ import Projects from './components/Projects'
 //CSS
 import { ChakraProvider } from "@chakra-ui/react"
 import "./css/App.css"
+import { checkIfLoggedIn } from './utilites/functions.utilities'
 
 
 
@@ -19,13 +20,13 @@ const App = () =>{
   return (
     <ChakraProvider>
         <Switch>
-            <Route exact path={["/", "/home"]} component={Home}/>
+            <Route exact path={["/", "/home"]} component={Home}  />
             <Route exact path="/login" component={Login}/>
             <Route  exact path='/register' component={SignUp} />
             <Route exact path='/profile' component={Profile} />
-            <Route  exact path='/tests' component={Tests}/>
-            <Route exact path='/homeworks' component={Homeworks}/>
-            <Route exact path='/projects' component={Projects}/>
+            <Route  exact path='/tests' component={Tests} />
+            <Route exact path='/homeworks' component={Homeworks} />
+            <Route exact path='/projects' component={Projects} />
         </Switch>
     </ChakraProvider>
    

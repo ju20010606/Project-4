@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const dbConfig = require('./config/db.config')
 const app = express()
+const mongoose = require("mongoose")
 const cors = require('cors')
 //parse requests of content-type - Application/ json
 app.use(cors())
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 const db = require('./models/index')
 const Role = db.role
+
 
 //connect to mongo database
 db.mongoose
@@ -39,6 +41,8 @@ app.get('/', (req,res)=>{
 //import the routes
 require('./routes/auth.routes')(app)
 require('./routes/user.routes')(app)
+require('./routes/homework.routes')(app)
+require('./routes/project.routes')(app)
 
 
 //set the port, listen for request
