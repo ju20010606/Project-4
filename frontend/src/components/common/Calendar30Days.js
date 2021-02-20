@@ -65,37 +65,37 @@ const getData = (e) =>{
        
                     <Divider orientation="horizontal" />
                        <Grid templateColumns="repeat(7, 1fr)" gap={4}>
-                            <Box  className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>1</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>2</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>3</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>4</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>5</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="10px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>6</Text></Center></Box>
-                            <Box className="calendarDayWeekend" w="60px" h="60px"  mt="40px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>7</Text></Center></Box>
+                            <Box  className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px" ><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>1</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px" ><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>2</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>3</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>4</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>5</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  mt="40px" ml="10px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>6</Text></Center></Box>
+                            <Box className="calendarDayWeekend" w="60px" h="60px"  mt="40px" ><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>7</Text></Center></Box>
 
-                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>8</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px" ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>9</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>10</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>11</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>12</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px" ml="10px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>13</Text></Center></Box>
-                            <Box className="calendarDayWeekend" w="60px" h="60px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>14</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>8</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px" ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>9</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>10</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>11</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>12</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px" ml="10px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>13</Text></Center></Box>
+                            <Box className="calendarDayWeekend" w="60px" h="60px" ><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>14</Text></Center></Box>
 
-                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>15</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px" ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>16</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>17</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>18</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>19</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="10px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>20</Text></Center></Box>
-                            <Box className="calendarDayWeekend" w="60px" h="60px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>21</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>15</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px" ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>16</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>17</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>18</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>19</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="10px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>20</Text></Center></Box>
+                            <Box className="calendarDayWeekend" w="60px" h="60px" ><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>21</Text></Center></Box>
 
-                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>22</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>23</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>24</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>25</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>28</Text></Center></Box>
-                            <Box className="calendarDay" w="60px" h="60px"  ml="10px"><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>29</Text></Center></Box>
-                            <Box className="calendarDayWeekend" w="60px" h="60px" ><Center><Text mt="25px" fontFamily="helvetica" onClick={getData}>30</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>22</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>23</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="20px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>24</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>25</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="15px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>28</Text></Center></Box>
+                            <Box className="calendarDay" w="60px" h="60px"  ml="10px"><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>29</Text></Center></Box>
+                            <Box className="calendarDayWeekend" w="60px" h="60px" ><Center><Text mt="17px" fontFamily="helvetica" onClick={getData}>30</Text></Center></Box>
                             
                     
                         </Grid> 

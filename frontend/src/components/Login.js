@@ -6,7 +6,7 @@ import CheckButton from "react-validation/build/button";
 // Component
 import FormGroup from './common/FormGroup'
 import ButtonSpinner from './common/ButtonSpinner'
-
+import {Box, Avatar, AiOutlineUser, CalendarIcon, Image, HStack} from '@chakra-ui/react'
 //Helper
 import { login } from '../services/auth.service'
 import { resMessage } from "../utilites/functions.utilities";
@@ -76,17 +76,20 @@ const Login = (props) => {
   };
   
   return (
-    <div className="col-md-12">
-      <div className="card card-container">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+      <>
+      {/* <img src="https://source.unsplash.com/eaeKesI3TJQ/1900x400"  ></img> */}
+      <Box w="300px" height="450px"  my="150px" p="50px" boxShadow="xl" bg="#2D3748"   mx="auto" >
+        {/* <img
+          // src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
           alt="profile-img"
           className="profile-img-card"
-        />
-
+        /> */}
+        {/* <Avatar bg="red.500" icon={<AiOutlineUser fontSize="1.5rem" />} /> */}
+        <Avatar  ml="50px" mb="10px" size="xl"   />
+        
         <Form onSubmit={handleLogin} ref={form}>
             
-            <FormGroup text="username">
+            <FormGroup text="username" >
             <Input
               type="text"
               className="form-control"
@@ -94,6 +97,7 @@ const Login = (props) => {
               value={username}
               onChange={onChangeUsername}
               validations={[required]}
+              
             />
             </FormGroup>
           
@@ -120,8 +124,10 @@ const Login = (props) => {
 
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
-      </div>
-    </div>
+      </Box>
+     
+     
+    </>
   );
 };
 
