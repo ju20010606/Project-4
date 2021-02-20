@@ -1,9 +1,9 @@
 # Project-4
 ### Screenshots
-<img src="https://i.imgur.com/XwQlnTQ.png" width="240" height="150" style="border: 1px solid black">
-<img src="https://i.imgur.com/JtiqCeN.png" width="240" height="150" style="border: 1px solid black">
-<img src="https://i.imgur.com/ubA86Gt.png" width="240" height="150" style="border: 1px solid black">
-<img src="https://i.imgur.com/oYgWbDz.png" width="240" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/XwQlnTQ.png" width="270" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/JtiqCeN.png" width="270" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/ubA86Gt.png" width="270" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/oYgWbDz.png" width="270" height="150" style="border: 1px solid black">
 
 ### Technologies used
 A couple paragraphs about the general approach you took
@@ -47,9 +47,9 @@ npm i validator
 ### User Stories
 Link to your user stories – who are your users, what do they want, and why?
 ### Wireframes
-<img src="https://i.imgur.com/P7d65BX.png" width="240" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/P7d65BX.png" width="250" height="150" style="border: 1px solid black">
 
-<img src="https://i.imgur.com/wJgd8Wg.png" width="240" height="150" style="border: 1px solid black">
+<img src="https://i.imgur.com/wJgd8Wg.png" width="250" height="150" style="border: 1px solid black">
 
 ### Pitch Deck
 Link to your pitch deck – documentation of your wireframes, user stories, and proposed architecture
