@@ -6,7 +6,14 @@
 <img src="https://i.imgur.com/oYgWbDz.png" width="270" height="150" style="border: 1px solid black">
 
 ### Technologies used
-A couple paragraphs about the general approach you took
+* HTML5
+
+* CSS
+
+* JavaScript
+
+* React
+
 ### Dependencies
 
 ```make sure to npm i (all dependencies should be installed, if they are not installed, install manually:```
@@ -45,7 +52,19 @@ npm i validator
 
 
 ### User Stories
-Link to your user stories – who are your users, what do they want, and why?
+* I want to create new homeworks, new projects or new tests
+
+* I want to be able to delete projects, homeworks or tests
+
+* I want to be able to edit projects, homeworks, or tests
+
+* I want to be able to see all the information from any homework, test or project displayed on the screen
+
+* I want to keep track of my progress
+
+* I want to have a calendar where I can see when my projects, homeworks or tests are due
+
+
 ### Wireframes
 <img src="https://i.imgur.com/P7d65BX.png" width="250" height="150" style="border: 1px solid black">
 
