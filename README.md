@@ -70,8 +70,6 @@ npm i validator
 
 <img src="https://i.imgur.com/wJgd8Wg.png" width="250" height="150" style="border: 1px solid black">
 
-### Pitch Deck
-Link to your pitch deck – documentation of your wireframes, user stories, and proposed architecture
 
 ### Problems Descriptions
 The calendar in the home page had to be made from scratch, so making it function was a difficulty.
